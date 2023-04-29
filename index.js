@@ -13,21 +13,46 @@ const questions = ["What is your Repo name?",
 "Enter Github name",
 "Enter email address"];
 
-inquirer.prompt(
+inquirer.prompt([
 
-).then((response) =>{
+    {
+      type: 'input',
+      message: questions[0],
+      name: 'name',
+    },
+    {
+      type: 'input',
+      message: questions[1],
+      name: 'location',
+    },
+    {
+      type: 'input',
+      message: questions[2],
+      name: 'github',
+    },
+    {
+    type: 'input',
+    message: questions[3],
+    name: 'linkedIn',
 
+    },
+  ]).then((response) =>{
+const fileName = "README.md"
+const writeREADME = require('./generateMarkdown.js') 
+
+    writeToFile(fileName, writeREADME)
 
 });
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    let readmeTemplate = ``;
 
+    fs.writeFile(fileName,data)
 }
 
 // TODO: Create a function to initialize app
 function init() {
+
 
 }
 
