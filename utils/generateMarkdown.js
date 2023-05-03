@@ -19,15 +19,15 @@ if(license == "MIT"){
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if(license == ""){
-
+    return ``;
   }
   if(license == "MIT"){
-  
+  return `[MIT license](https://opensource.org/license/mit/)`;
   }else if(license == "ISC"){
-  
+  return `[ISC license](https://opensource.org/license/isc-license-txt/)`;
     
   }else if(license == "Apache 2.0"){
-  
+  return`[Apache 2.0 license](https://opensource.org/license/apache-2-0/)`;
   }
 }
 
@@ -35,15 +35,16 @@ function renderLicenseLink(license) {
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if(license == ""){
-
+    return ``;
   }
   if(license == "MIT"){
+    return ``;
   
   }else if(license == "ISC"){
-  
+    return ``;
     
   }else if(license == "Apache 2.0"){
-  
+    return ``;
   }
 }
 
@@ -51,10 +52,36 @@ function renderLicenseSection(license) {
 function generateMarkdown(data) {
   return `# ${data.title}
 
+  ## Table of Contents
+
+
   ## Description
   ${data.description}
 
-  ##
+  ## Installation 
+  ${data.installInst}
+
+  ## Usage
+  ${data.usageInfo}
+
+  ## Contributing
+  ${data.contriGuide}
+
+  ## License
+  ${data.renderLicenseBadge(license)}${data.renderLicenseLink(license)}
+  
+  Copyright 2023 ${data.github}
+  ${data.renderLicenseSection(license)}
+
+  ## Tests
+  ${data.testInstr}
+
+
+  ## Questions
+  For any questions related to the repository, reach me at the following email
+
+  Email: ${data.email}
+
 
 `;
 }
