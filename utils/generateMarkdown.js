@@ -38,13 +38,13 @@ function renderLicenseSection(license) {
     return ``;
   }
   if(license == "MIT"){
-    return ``;
+    return `MIT`;
   
   }else if(license == "ISC"){
-    return ``;
+    return `ISC`;
     
   }else if(license == "Apache 2.0"){
-    return ``;
+    return `Apache 2.0`;
   }
 }
 
@@ -68,10 +68,10 @@ function generateMarkdown(data) {
   ${data.contriGuide}
 
   ## License
-  ${data.renderLicenseBadge(license)}${data.renderLicenseLink(license)}
+  ${renderLicenseBadge(data.license)}${renderLicenseLink(data.license)}
   
   Copyright 2023 ${data.github}
-  ${data.renderLicenseSection(license)}
+  ${renderLicenseSection(data.license)}
 
   ## Tests
   ${data.testInstr}
