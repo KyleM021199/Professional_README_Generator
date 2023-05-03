@@ -82,8 +82,9 @@ inquirer.prompt([
   ]).then((response) =>{
 const fileName = "README.md"; 
 
-console.log(writeREADME(response));
-//writeToFile(fileName, writeREADME(response));
+//console.log(writeREADME(response));
+console.log("File Made!")
+writeToFile(fileName, writeREADME(response));
 
 });
 
