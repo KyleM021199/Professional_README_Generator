@@ -120,7 +120,6 @@ function generateMarkdown(data) {
   ${data.contriGuide}
 
   ## License
-  ${renderLicenseBadge(data.license)}
   
   ${renderLicenseLink(data.license)}
   
