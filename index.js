@@ -1,6 +1,9 @@
 // TODO: Include packages needed for this application
+//file system
 const fs = require('fs');
+//inquirer 
 const inquirer = require('inquirer');
+//exported generateMarkdown
 const writeREADME = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
@@ -25,36 +28,43 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
-    //let answers= [];
+
+// inquirer prompts answers
 inquirer.prompt([
     {
+    //Title
       type: 'input',
       message: questions[0],
       name: 'title',
     },
     {
+    //Description
       type: 'input',
       message: questions[1],
       name: 'description',
     },
     {
+        //Installation
       type: 'input',
       message: questions[2],
       name: 'installInst',
     },
     {
+        //Usage
     type: 'input',
     message: questions[3],
     name: 'usageInfo',
 
     },
     {
+        //Contributing
     type: 'input',
     message: questions[4],
     name: 'contriGuide',
     
     },
     {
+        //License checkbox
     type: 'checkbox',
     message: questions[5],
     name: 'license',
@@ -62,18 +72,21 @@ inquirer.prompt([
         
     },
     {
+        //Tests
     type: 'input',
     message: questions[6],
     name: 'testInstr',
             
     },
     {
+        //Github
     type: 'input',
     message: questions[7],
     name: 'github',
                 
     },
     {
+        //Email
     type: 'input',
     message: questions[8],
     name: 'email',
@@ -84,6 +97,7 @@ const fileName = "README.md";
 
 //console.log(writeREADME(response));
 console.log("File Made!")
+// writes the README file with the provided responses via the inquirer
 writeToFile(fileName, writeREADME(response));
 
 });
